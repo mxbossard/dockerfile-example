@@ -4,6 +4,8 @@ MAINTAINER Maxime Bossard <mxbossard@pm.me>
 
 WORKDIR /root
 
-ENV NAME=${NAME:-World}
+ENV NAME=
 
-CMD while true; do echo "Hello ${NAME} !"; sleep 1 ; done
+COPY helloWorld.sh .
+
+CMD ["/bin/sh", "-c", "./helloWorld.sh $NAME World un_autre_argument ..."]
