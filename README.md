@@ -23,3 +23,17 @@ docker run --rm -it build2
 docker run --rm -it -e "NAME=Maxime" build2
 ```
 
+##Build 3
+Pour plus de souplesse, on inscrit notre script comme entrypoint.
+
+``` bash
+git checkout build3
+docker build -t $( git rev-parse --abbrev-ref HEAD ) .
+docker run --rm -it $( git rev-parse --abbrev-ref HEAD )
+```
+
+__Ainsi on peut passer les arguments du script directement en argument du docker run !__
+``` bash
+docker run --rm -it build3 Maxime
+```
+

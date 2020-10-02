@@ -8,4 +8,8 @@ ENV NAME=
 
 COPY helloWorld.sh .
 
-CMD ["/bin/sh", "-c", "./helloWorld.sh $NAME World un_autre_argument ..."]
+# Remplace le /bin/sh par défaut
+ENTRYPOINT ["./helloWorld.sh"]
+
+# Les arguments de l'entrypoint par défaut
+CMD ["World", "un_autre_argument", "..."]
