@@ -23,7 +23,7 @@ docker run --rm -it build2
 docker run --rm -it -e "NAME=Maxime" build2
 ```
 
-##Build 3
+## Build 3
 Pour plus de souplesse, on inscrit notre script comme entrypoint.
 
 ``` bash
